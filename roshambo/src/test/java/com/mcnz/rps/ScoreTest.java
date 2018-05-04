@@ -6,12 +6,12 @@ import org.junit.Test;
 
 public class ScoreTest {
 
-	@Test
-	public void testIncreaseWins() {
-		Score score = new Score();
-		score.increaseWins();
-		Assert.assertTrue(score.getWins()>0);
-	}
+//	@Test
+//	public void testIncreaseWins() {
+//		Score score = new Score();
+//		score.increaseWins();
+//		Assert.assertTrue(score.getWins()>0);
+//	} 
 	@Test
 	public void testIncreaseLosses() {
 		Score score = new Score();
@@ -23,6 +23,12 @@ public class ScoreTest {
 		Score score = new Score();
 		score.increaseTies();
 		Assert.assertTrue(score.getTies()>0);
+	}
+	
+	@Test
+	public void testToString() {
+		Score score = new Score();
+		Assert.assertTrue(score.toString().length()>0);
 	}
 
 }
