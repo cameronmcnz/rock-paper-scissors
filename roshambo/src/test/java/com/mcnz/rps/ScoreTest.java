@@ -1,20 +1,28 @@
 package com.mcnz.rps;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class ScoreTest extends TestCase {
 
+public class ScoreTest {
 
+	@Test
 	public void testIncreaseWins() {
-		fail("Not yet implemented");
+		Score score = new Score();
+		score.increaseWins();
+		Assert.assertTrue(score.getWins()>0);
 	}
-
+	@Test
 	public void testIncreaseLosses() {
-		fail("Not yet implemented");
+		Score score = new Score();
+		score.increaseLosses();
+		Assert.assertTrue(score.getLosses()>0);
 	}
-
+	@Test
 	public void testIncreaseTies() {
-		fail("Not yet implemented");
+		Score score = new Score();
+		score.increaseTies();
+		Assert.assertTrue(score.getTies()>0);
 	}
 
 }
