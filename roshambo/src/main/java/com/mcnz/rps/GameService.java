@@ -19,4 +19,4 @@ public class GameService {
 		return gameSummary;
 	}
 
-}
+} 
