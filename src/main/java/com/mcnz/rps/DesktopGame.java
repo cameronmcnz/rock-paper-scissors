@@ -12,7 +12,7 @@ public class DesktopGame {
 		java.util.Vector<GameSummary> history = new java.util.Vector<GameSummary>();
 
 		while (true) {
-			String result = "error";
+			String result = "error"
 			String input = JOptionPane.showInputDialog(prompt);
 			if (input.equals(Gesture.scissors.toString())) {
 				result = "lose";
