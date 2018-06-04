@@ -5,7 +5,7 @@ public class Score {
 	private int wins, losses, ties;
 	
 	public void increaseWins(){
-		wins++;
+		wins--;
 	}
 	public void increaseLosses(){
 		losses++;
