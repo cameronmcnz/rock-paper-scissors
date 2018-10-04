@@ -9,9 +9,8 @@
   <version>1.0</version>
   <packaging>war</packaging>
 
-  <name>roshambo Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <name>roshambo web application</name>
+  <url>http://www.mcnz.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
