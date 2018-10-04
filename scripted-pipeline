@@ -4,25 +4,25 @@ node {
 
    stage('Version') { 
 
-	  //build job: 'Version Check'
+	  //build job: 'version-check'
           
    }
 
    stage('Environment') {
        
-       // build job: 'Enviro-Check'
+       // build job: 'environment-check'
        
    }
 
    stage('Document') {
    
-	  //build job: 'Generate-JavaDoc', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
+	  //build job: 'document-roshambo', parameters: [booleanParam(name: 'generate_javadoc', value: false), stringParam(name: 'javadoc_location', value: 'C:\\_javadoc00')]
 
    }
 
    stage('Compile'){
   
-       // build job: 'Compile-RPS'
+       // build job: 'compile-roshambo'
    }
    
    stage('Acceptance') {
