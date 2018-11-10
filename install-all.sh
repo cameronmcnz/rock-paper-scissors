@@ -31,16 +31,16 @@ unzip download_file?file_path=jfrog-artifactory-oss-6.5.2.zip
 cd art*
 cd bin*
 sudo ./installService.sh
-sudo service artifactory start
+# sudo service artifactory start
 
 #Docker
-apt-get update
-apt-get -y install docker.io
-ln -sf /usr/bin/docker.io /usr/local/bin/docker
+sudo apt-get update
+sudo apt-get -y install docker.io
+sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
-update-rc.d docker.io defaults
-docker pull ubuntu
-docker run -i -t ubuntu /bin/bash
-docker search debian
+sudo update-rc.d docker.io defaults
+sudo docker pull ubuntu
+sudo docker run -i -t ubuntu /bin/bash
+sudo docker search debian
 
 
