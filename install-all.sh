@@ -23,6 +23,15 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sour
 sudo apt-get update
 sudo apt-get install jenkins -y
 
+#Artifactory
+
+wget https://bintray.com/jfrog/artifactory/download_file?file_path=jfrog-artifactory-oss-6.5.2.zip
+# unzip jfrog-artifactory-oss-6.5.2.zip
+unzip download_file?file_path=jfrog-artifactory-oss-6.5.2.zip
+cd art*
+cd bin*
+sudo ./installService.sh
+sudo service artifactory start
 
 #Docker
 apt-get update
@@ -34,12 +43,4 @@ docker pull ubuntu
 docker run -i -t ubuntu /bin/bash
 docker search debian
 
-#Artifactory
 
-wget https://bintray.com/jfrog/artifactory/download_file?file_path=jfrog-artifactory-oss-6.5.2.zip
-# unzip jfrog-artifactory-oss-6.5.2.zip
-unzip download_file?file_path=jfrog-artifactory-oss-6.5.2.zip
-cd art*
-cd bin*
-sudo ./installService.sh
-sudo service artifactory start
