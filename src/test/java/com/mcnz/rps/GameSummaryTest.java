@@ -10,7 +10,7 @@ public class GameSummaryTest {
 	public void testGetClientGesture() {
 		GameSummary gameSummary = new GameSummary("rock", "scissors", "win");
 		Assert.assertTrue(gameSummary.getClientGesture().equals("rock"));
-		Assert.assertNotEquals(gameSummary.getClientGesture(), "scissors");
+		Assert.assertNotEquals("scissors", gameSummary.getClientGesture() );
 	}
 
 	@Test
@@ -22,7 +22,7 @@ public class GameSummaryTest {
 	@Test
 	public void testGetResult() {
 		GameSummary gameSummary = new GameSummary("rock", "scissors", "win");
-		Assert.assertEquals(gameSummary.getResult(), "win");
+		Assert.assertEquals( "win", gameSummary.getResult());
 	}
 
 	@Test
