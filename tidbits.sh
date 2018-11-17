@@ -84,6 +84,8 @@ GRANT ALL PRIVILEGES ON wpdb.* to wpuser@localhost;
 SHOW GRANTS FOR 'wpadmin'@'localhost';
 
 
+# MySQL Workbench
+sudo apt install mysql-workbench
 
 
 
