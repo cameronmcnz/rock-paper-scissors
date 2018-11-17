@@ -42,3 +42,9 @@ sudo update-rc.d docker.io defaults
 sudo docker pull ubuntu
 sudo docker run -i -t ubuntu /bin/bash
 sudo docker search debian
+
+
+# Newtork Tools
+sudo apt update
+sudo apt install net-tools
+sudo apt install gparted
