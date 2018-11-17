@@ -59,6 +59,8 @@ systemctl enable mysql
 sudo -i
 # Unknown column 'Password' in 'field list'
 # UPDATE mysql.user SET Password = PASSWORD('password') WHERE User = 'root';
+/usr/bin/mysql -u root -p
+
 UPDATE mysql.user SET authentication_string = PASSWORD('password') WHERE User = 'root';
 FLUSH PRIVILEGES;
 SELECT User, Host, authentication_string FROM mysql.user;
@@ -67,10 +69,14 @@ SELECT User, Host, authentication_string FROM mysql.user;
 CREATE DATABASE wpdb;
 
 INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject) VALUES ('wpadmin','localhost',PASSWORD('password'),'','','');
+INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject) VALUES ('cuttlefish','localhost',PASSWORD('password'),'','','');
+
+INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject) VALUES ('cuttle','localhost',PASSWORD('password'),'','','');
+
 
 INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject)
 VALUES('wpuser','localhost',PASSWORD('password'),'','','');
-
+CREATE USER 'cuttlefish'@'localhost' IDENTIFIED BY 'password';
 # connect wpdb
 INSERT INTO mysql.user (User,Host,authentication_string,ssl_cipher,x509_issuer,x509_subject) VALUES ('wpadmin','localhost',PASSWORD('password'),'','','')
 CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password';
@@ -80,13 +86,21 @@ FLUSH PRIVILEGES;
 
 GRANT ALL PRIVILEGES ON wpdb.* to wpadmin@localhost;
 GRANT ALL PRIVILEGES ON wpdb.* to wpuser@localhost;
+GRANT ALL PRIVILEGES ON wpdb.* to cuttlefish@localhost;
+GRANT ALL PRIVILEGES ON wpdb.* to cuttle@localhost;
 
 SHOW GRANTS FOR 'wpadmin'@'localhost';
-
+SELECT User, Host, authentication_string FROM mysql.user;
 
 # MySQL Workbench
 sudo apt install mysql-workbench
+sudo nano /etc/mysql/my.cnf
+bind-address = 0.0.0.0
+# Wordpress
 
 
+
+sudo docker run --name wordpress -p 80:80 wordpress
+http://localhost/wp-admin/setup-config.php
 
 
