@@ -39,8 +39,6 @@ sudo apt-get -y install docker.io
 sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker
 sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 sudo update-rc.d docker.io defaults
-sudo docker pull ubuntu
-sudo docker run -i -t ubuntu /bin/bash
-sudo docker search debian
+
 
 
