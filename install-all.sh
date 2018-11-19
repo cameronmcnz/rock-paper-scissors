@@ -41,4 +41,5 @@ sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 sudo update-rc.d docker.io defaults
 
 
-
+sudo apt-get install tree
+sudo apt-get install git-flow
