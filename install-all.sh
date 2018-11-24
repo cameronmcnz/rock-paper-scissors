@@ -16,6 +16,8 @@ sudo apt install git-all -y
 sudo apt-get install maven
 git config --global user.name "Triple Baconator"
 git config --global user.email triple@baconator.on.ca
+sudo apt-get install tree
+sudo apt-get install git-flow
 
 #Jenkins
 wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
@@ -41,5 +43,4 @@ sed -i '$acomplete -F _docker docker' /etc/bash_completion.d/docker.io
 sudo update-rc.d docker.io defaults
 
 
-sudo apt-get install tree
-sudo apt-get install git-flow
+
