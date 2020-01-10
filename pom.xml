@@ -3,7 +3,7 @@
 	<!-- interesting -->
 	<groupId>com.mcnz.rps</groupId>
 	<artifactId>roshambo</artifactId>
-	<version>1.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>roshambo</name>
