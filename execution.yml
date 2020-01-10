@@ -1,12 +1,5 @@
-execution:
-  concurrency: 10
-  hold-for: 2m30s
-  ramp-up: 1m
-  scenario: Thread Group
+provisioning: cloud
 
-scenarios:
-  Thread Group:
-    requests:
-    - label: blazedemo
-      method: GET
-      url: http://blazedemo.com/
+modules:
+  cloud:
+    test: https://a.blazemeter.com/app/#/accounts/117582/workspaces/228149/projects/291617/tests/6414141
