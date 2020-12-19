@@ -8,6 +8,7 @@ public class GameService {
 		String result = "error";
 		if (clientGesture.equals("scissors")) {
 			result = "lose";
+			
 		}
 		if (clientGesture.equals("paper")) {
 			result = "win";

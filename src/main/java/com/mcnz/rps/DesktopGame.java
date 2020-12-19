@@ -1,12 +1,19 @@
 package com.mcnz.rps;
 
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
+import com.mcnz.jfr.jmc.memory.MemoryLeak;
+
 public class DesktopGame {
-	public enum Gesture {rock,paper,scissors};
+	public enum Gesture {rock, paper, scissors, spock, lizard};
 
 	public static void main(String[] args) {
+		playTheGame();
+	}
 
+	private static void playTheGame() {
 		String prompt = "Will it be rock, paper or scissors?";
 		Score score = new Score();
 		java.util.Vector<GameSummary> history = new java.util.Vector<GameSummary>();
@@ -14,15 +21,20 @@ public class DesktopGame {
 		while (true) {
 			String result = "error";
 			String input = JOptionPane.showInputDialog(prompt);
-			if (input.equals(Gesture.scissors.toString())) {
+			if (input.equalsIgnoreCase(Gesture.lizard.toString())) {
+				result = "lose";
+				try {MemoryLeak.main(null);} 
+				catch (IOException e) {e.printStackTrace();}
+			}
+			if (input.equalsIgnoreCase(Gesture.scissors.toString())) {
 				result = "lose";
 				score.increaseLosses();
 			}
-			if (input.equals(Gesture.paper.toString())) {
+			if (input.equalsIgnoreCase(Gesture.paper.toString())) {
 				result = "win";
 				score.increaseWins();
 			}
-			if (input.equals(Gesture.rock.toString())) {
+			if (input.equalsIgnoreCase(Gesture.rock.toString())) {
 				result = "tie";
 				score.increaseTies();
 			}
