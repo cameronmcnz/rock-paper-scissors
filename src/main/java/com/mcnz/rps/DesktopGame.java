@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+import com.mcnz.jfr.jmc.exceptions.HandleZeroInputGracefully;
 import com.mcnz.jfr.jmc.memory.MemoryLeak;
 
 public class DesktopGame {
@@ -21,6 +22,11 @@ public class DesktopGame {
 		while (true) {
 			String result = "error";
 			String input = JOptionPane.showInputDialog(prompt);
+			try {
+				if (input.trim().equalsIgnoreCase("")) {
+					HandleZeroInputGracefully.main(null);
+				}
+			} catch (Exception e1) {}
 			if (input.equalsIgnoreCase(Gesture.lizard.toString())) {
 				result = "lose";
 				try {MemoryLeak.main(null);} 

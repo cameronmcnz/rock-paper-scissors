@@ -22,5 +22,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="rock-paper-scissors"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="rock-paper-scissors"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-XX:+FlightRecorder -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:FlightRecorderOptions=stackdepth=128 -XX:StartFlightRecording=delay=1s,duration=60s,name=HotMethods,filename=${workspace_loc}/Recordings/rock-paper-scissors.jfr,settings=profile -Xlog:jfr=info"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xmx256m -Xms256m -XX:+FlightRecorder -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:FlightRecorderOptions=stackdepth=128 -XX:StartFlightRecording=delay=1s,duration=30s,name=Rock-Paper-Scissors,filename=${workspace_loc}/Recordings/rock-paper-scissors.jfr,settings=profile -Xlog:jfr=info"/>
 </launchConfiguration>
