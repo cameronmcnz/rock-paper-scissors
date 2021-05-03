@@ -1,0 +1,24 @@
+package com.simple;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+/** This is some JavaDoc */
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		//System.out.println("Hello. What is your name? ");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		//String name = scan.nextLine();
+		
+		String name = JOptionPane.showInputDialog(null, "What is your name?");
+		
+		System.out.println("Hello " + name);
+
+		scan.close();
+	}
+
+}
