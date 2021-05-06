@@ -1,0 +1,41 @@
+package com.simple;
+
+import javax.swing.JOptionPane;
+import java.util.*;
+
+public class Roshambo {
+
+	public static void main(String[] args) {
+		
+		Score score = new Score(true, 20);
+		
+		String userChoice = JOptionPane.showInputDialog(null, "Rock, paper or Scissors?");
+		java.util.ArrayList history = new java.util.ArrayList();
+		
+		while (true) {
+			if (userChoice.equalsIgnoreCase("q")) {
+				System.out.println("Exiting...");
+				break;
+			}
+			String result = "lose";
+			if (userChoice.equals("rock")) {
+				result = "tie";
+				score.increaseTies();
+			}
+			if (userChoice.equals("paper")) {
+				result = "win";
+				score.increaseWins();
+			}
+			GameSummary gs = new GameSummary(userChoice, "rock", result);
+			history.add(gs);
+			System.out.println("You chose: " + userChoice + ". The result? " + result);
+			System.out.println("Results so far: " + score.wins 
+					                + " " + score.losses + " " + score.ties );
+			for (Object object : history) {
+				GameSummary summary = (GameSummary)object;
+				System.out.println(summary);
+			}
+			userChoice = JOptionPane.showInputDialog(null, "Rock, paper or Scissors?");
+		} 
+	}
+}
