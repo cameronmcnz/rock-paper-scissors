@@ -1,10 +1,13 @@
-package com.mcnz.rps;
+package com.mcnz.rps.moai;
+
+
 
 public class Score {
 
-	private int wins, losses, ties;
+	public int wins, losses, ties;
 	
 	public void increaseWins(){
+		System.out.println("Increasing wins in the bean");;
 		wins++;
 	}
 	public void increaseLosses(){
