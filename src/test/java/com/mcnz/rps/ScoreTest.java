@@ -34,7 +34,7 @@ public class ScoreTest {
 	@Test
 	public void testWillFail() {
 		
-		Assert.assertTrue(true);
+		Assert.assertTrue(false);
 	}
 
 }
