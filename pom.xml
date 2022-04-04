@@ -39,7 +39,6 @@
 
 				</plugin>
 		    
-		    <plugins>
 		          <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -56,7 +55,7 @@
 		    <configuration>
 			<repository>${docker.image.prefix}/${project.artifactId}</repository>
 			<buildArgs>
-			    <WAR_FILE>target/${project.build.finalName}.jar</WAR_FILE>
+			    <WAR_FILE>target/${project.build.finalName}.war</WAR_FILE>
 			</buildArgs>
 		    </configuration>
 		</plugin>
