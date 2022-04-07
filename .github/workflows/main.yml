@@ -26,7 +26,20 @@ jobs:
       - name: Step 3 - Have GitHub Actions Build Maven Project
         run: |
           mvn -B package --file pom.xml
+          mkdir staging && cp target/*.jar staging
 
+      - name: Step 4 - Set up a cache for Maven
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Step 5 - Persist workflow data as artificats
+        uses: actions/upload-artifact@v2
+        with:
+          name: github-actions-artifact
+          path: staging
         
 
 
