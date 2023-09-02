@@ -41,7 +41,4 @@ node {
       }
    }
 
-   stage('Static Code Analysis'){
-       build job: 'code-analysis-build-job'
-   }
 }
