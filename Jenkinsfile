@@ -31,7 +31,7 @@ node {
 
    }
    
-   stage('Conclusion') {
+   stage('Almost Done!') {
       def response = input message: 'Whatcha think?', parameters: [choice(choices: 'Yes\nNo', description: 'Proceed or Abort?', name: 'Wasn\'t that cool?')]
         
       if (response=="Yes") {
@@ -40,4 +40,10 @@ node {
          echo "You are hard to please."
       }
    }
+	
+   stage('Static Code Analysis'){
+       build job: 'static-code-analysis'
+   }
+	
+
 }
