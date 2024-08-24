@@ -1,0 +1,115 @@
+package com.mcnz.spring;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@ComponentScan
+@EnableAutoConfiguration
+@RestController
+public class SimpleExample implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		ApplicationContext spring 
+                  = new AnnotationConfigApplicationContext(SimpleExample.class);
+		Game game = spring.getBean(Game.class);
+		JdbcTemplate jdbcTemplate = spring.getBean(JdbcTemplate.class);
+		Score x = jdbcTemplate.queryForObject("select * from score where id = 1", new BeanPropertyRowMapper<Score>(Score.class));
+		System.out.println(x.wins);
+		game.playTheGame("rock");
+		System.out.print(game.score.wins); // prints 1
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("Hello World!");
+	}
+
+}
+
+@Configuration
+class SpringConfig {
+
+    @Bean
+    public Score getScore() {
+		return new Score();
+	}
+    
+    @Bean
+    public Game getGame() {
+		return new Game(getScore());
+	}
+	
+}
+
+class Score {
+	int id;
+	int wins;
+	int ties;
+	int losses;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getWins() {
+		return wins;
+	}
+
+	public void setWins(int wins) {
+		this.wins = wins;
+	}
+
+	public int getLosses() {
+		return losses;
+	}
+
+	public void setLosses(int losses) {
+		this.losses = losses;
+	}
+
+	public int getTies() {
+		return ties;
+	}
+
+	public void setTies(int ties) {
+		this.ties = ties;
+	}
+}
+
+class Game {
+	
+	Score score;
+	
+	public Game(Score score) {
+		super();
+		this.score = score;
+	}
+
+	public void playTheGame(String gesture) {
+		score.wins++;
+	}
+}
+
+@RestController
+class Test {
+	
+
+	@GetMapping("/hi")
+	public String hello() {
+		return "Hello";
+	}
+}
