@@ -1,3 +1,7 @@
+tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+}
 node {
    
    //Declare a global variable for mvnHome
